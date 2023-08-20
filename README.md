@@ -1,2 +1,2 @@
 # gameAdvanced
-meu projeto de desenvolvimento de jogos
+meu projeto de desenvolvimento de jogos.
