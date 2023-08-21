@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 7734332}
   - component: {fileID: 7734331}
   - component: {fileID: 7734330}
+  - component: {fileID: 7734333}
   m_Layer: 0
   m_Name: Shield
   m_TagString: Untagged
@@ -234,6 +235,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7734333
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7734329}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a68c0079f4052745b095b171a18e8b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &176157834
 GameObject:
   m_ObjectHideFlags: 0
@@ -244,6 +257,7 @@ GameObject:
   m_Component:
   - component: {fileID: 176157836}
   - component: {fileID: 176157835}
+  - component: {fileID: 176157837}
   m_Layer: 0
   m_Name: Invaders
   m_TagString: Untagged
@@ -270,8 +284,9 @@ MonoBehaviour:
   rows: 3
   columns: 9
   speed: 1
-  missileRate: 0
-  missilePrefabs: {fileID: 0}
+  missileRate: 271
+  missilePrefabs: {fileID: 3572071942715855886, guid: 9b4f0b1ffa5ab7744881425aade0f597, type: 3}
+  invaderKilled: 0
 --- !u!4 &176157836
 Transform:
   m_ObjectHideFlags: 0
@@ -287,6 +302,27 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!50 &176157837
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 176157834}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -412,7 +448,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1, y: 2}
   m_EdgeRadius: 0
 --- !u!4 &720748116
 Transform:
@@ -768,7 +804,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1, y: 1.8}
   m_EdgeRadius: 0
 --- !u!4 &1255074359
 Transform:
@@ -796,6 +832,7 @@ GameObject:
   - component: {fileID: 1360820932}
   - component: {fileID: 1360820931}
   - component: {fileID: 1360820930}
+  - component: {fileID: 1360820933}
   m_Layer: 0
   m_Name: Shield (3)
   m_TagString: Untagged
@@ -896,6 +933,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1360820933
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1360820929}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a68c0079f4052745b095b171a18e8b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1807649150
 GameObject:
   m_ObjectHideFlags: 0
@@ -907,6 +956,7 @@ GameObject:
   - component: {fileID: 1807649153}
   - component: {fileID: 1807649152}
   - component: {fileID: 1807649151}
+  - component: {fileID: 1807649154}
   m_Layer: 0
   m_Name: Shield (1)
   m_TagString: Untagged
@@ -1007,6 +1057,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1807649154
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1807649150}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a68c0079f4052745b095b171a18e8b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1824439701
 GameObject:
   m_ObjectHideFlags: 0
@@ -1018,6 +1080,7 @@ GameObject:
   - component: {fileID: 1824439704}
   - component: {fileID: 1824439703}
   - component: {fileID: 1824439702}
+  - component: {fileID: 1824439705}
   m_Layer: 0
   m_Name: Shield (2)
   m_TagString: Untagged
@@ -1118,6 +1181,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1824439705
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1824439701}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a68c0079f4052745b095b171a18e8b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1970279194
 GameObject:
   m_ObjectHideFlags: 0

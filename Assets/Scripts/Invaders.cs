@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.IMGUI.Controls;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Invaders : MonoBehaviour
 {
@@ -14,6 +15,7 @@ public class Invaders : MonoBehaviour
 
     public float missileRate;
     public Laser missilePrefabs;
+    public int invadersKilled;
 
     private void Awake()
     {
@@ -70,6 +72,12 @@ public class Invaders : MonoBehaviour
     {
         speed += 0.25f;
         missileRate -= 10f;
+
+        invadersKilled++;
+        if (invadersKilled == 27)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
     }
 
     private void Start()
