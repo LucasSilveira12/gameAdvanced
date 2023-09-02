@@ -13,11 +13,6 @@ public class Score : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision){
         manage.score++;
-        manage.score.text = manage.score.ToString();
-    }
-    // Update is called once per frame
-    void Update()
-    {
-        
+        manage.scoretext.text = manage.score.ToString();
     }
 }
