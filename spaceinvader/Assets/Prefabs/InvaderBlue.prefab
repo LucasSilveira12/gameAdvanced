@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 538991271399179960}
   - component: {fileID: 6432876844839356305}
   - component: {fileID: 3017502356465119404}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: InvaderBlue
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3457798288180648542}
   - component: {fileID: 2907337339715570286}
   - component: {fileID: -2775752181432435514}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: InvaderGreen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
