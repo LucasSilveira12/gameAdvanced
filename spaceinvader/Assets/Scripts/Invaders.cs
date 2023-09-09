@@ -10,6 +10,7 @@ public class Invaders : MonoBehaviour
     public int rows;
     public int columns;
 
+
     public float speed;
     private Vector3 direction = Vector2.right;
 
