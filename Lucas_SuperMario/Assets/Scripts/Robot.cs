@@ -14,7 +14,6 @@ public class Robot : MonoBehaviour
     void Start()
     {
         rig = GetComponent <Rigidbody2D>();
-        
         anim = GetComponent <Animator>();
     }
 
