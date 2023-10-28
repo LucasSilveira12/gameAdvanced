@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
 {
     public int totalscore;
     public Text scoreboard;
+    public Text score;
     public static GameManager access;
 
     public GameObject gameover;
@@ -26,6 +27,7 @@ public class GameManager : MonoBehaviour
 
     public void Winner()
     {
+        score.text = totalscore.ToString();
         winner.SetActive(true);
     }
 
