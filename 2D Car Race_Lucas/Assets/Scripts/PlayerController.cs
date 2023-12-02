@@ -22,6 +22,7 @@ public class PlayerController : MonoBehaviour
     private void Awake()
     {
         carRig = GetComponent<Rigidbody2D>();
+        carAnim = GetComponent<Animator>();
     }
 
     private void FixedUpdate()

@@ -7,10 +7,10 @@ public class PositionHandler : MonoBehaviour
 {
     public List<LapCounter> lapCounters = new List<LapCounter>();
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-        //LapCounter[] lapCountersArray = FindObjectOfType<LapCounter>();
-        //lapCounters = lapCountersArray.ToList<LapCounter>();
+        LapCounter[] lapCountersArray = FindObjectsOfType<LapCounter>();
+        lapCounters = lapCountersArray.ToList<LapCounter>();
         foreach (LapCounter lapCounter in lapCounters)
             lapCounter.OnPassCheckpoint += OnPassCheckpoint;
     }
@@ -18,6 +18,9 @@ public class PositionHandler : MonoBehaviour
     void OnPassCheckpoint(LapCounter lapCounter)
     {
         Debug.Log($"Evento: Carro {lapCounter.gameObject.name} passou p checkpoint");
+        lapCounters = lapCounters.OrderByDescending(s => s.GetNCheckpointPassed()).ThenBy(s => s.GetTimeCheckpointPassed()).ToList();
+        int carPosition = lapCounters.IndexOf(lapCounter) + 1;
+        lapCounter.SetCarPosition(carPosition);
     }
 
     // Update is called once per frame
