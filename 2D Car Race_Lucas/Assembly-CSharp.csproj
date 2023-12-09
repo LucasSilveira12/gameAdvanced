@@ -57,12 +57,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\PlayerController.cs" />
+    <Compile Include="Assets\Scripts\AlHandler.cs" />
     <Compile Include="Assets\Scripts\PositionHandler.cs" />
     <Compile Include="Assets\Scripts\LapCounter.cs" />
     <Compile Include="Assets\Scripts\CarHandler.cs" />
-    <Compile Include="Assets\Scripts\Checkpoint.cs" />
-    <Compile Include="Assets\Scripts\AlHandler.cs" />
     <Compile Include="Assets\Scripts\WaypointNode.cs" />
+    <Compile Include="Assets\Scripts\Checkpoint.cs" />
+    <Compile Include="Assets\Scripts\LeaderboardItem.cs" />
+    <Compile Include="Assets\Scripts\UIHandler.cs" />
+    <Compile Include="Assets\Scripts\GameManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

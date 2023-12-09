@@ -13,7 +13,7 @@ public class PlayerController : MonoBehaviour
 
     float accelerationInput = 0;
     float steeringInput = 0;
-    float rotationAngle = 0;
+    float rotationAngle = -90;
     float velocityUp = 0;
 
     Rigidbody2D carRig;
