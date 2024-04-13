@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
+    WaitForSeconds threeSec;
+    public bool isPlayable;
     int maxHealth = 100;
     int currentHealth;
     public HealthBar healthBar;
@@ -18,6 +21,8 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        threeSec = new WaitForSeconds(3);
+        isPlayable = false;
         currentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
 
@@ -27,6 +32,13 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
+        if(currentHealth <= 0)
+        {
+            anim.SetBool("Defeat", true);
+            StartCoroutine("Ending");
+            SceneManager.LoadScene(0);
+        }
+
         if(isKnockback)
         {
             anim.SetBool("Knockback", false);
@@ -47,10 +59,22 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(currentHealth > 0)
+        {
+        
+        if(!isPlayable)
+        {
+            isPlayable = healthBar.finishCountDown;
+        }
+        else
+        {
+
         if(!isAttack && !isKnockback)
         {
             Movement();
             Attack();
+        }
+        }
         }
     }
 
@@ -138,13 +162,17 @@ void Attack()
         if(collision.gameObject.layer == 3)
         {
             currentHealth -=10;
+            if(currentHealth > 0)
+            {
             healthBar.SetHealth(currentHealth);
             
             anim.SetBool("Knockback", true);
+            
             if(isPlayer1)
             {
                 rig.velocity = new Vector2(speed * (-1), 0.0f);
             }
+            
         }
     }
 }
