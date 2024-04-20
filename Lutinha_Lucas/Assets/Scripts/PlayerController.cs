@@ -62,87 +62,87 @@ public class PlayerController : MonoBehaviour
         if(currentHealth > 0)
         {
         
-        if(!isPlayable)
-        {
-            isPlayable = healthBar.finishCountDown;
-        }
-        else
-        {
+            if(!isPlayable)
+            {
+                isPlayable = healthBar.finishCountDown;
+            }
+            else
+            {
 
-        if(!isAttack && !isKnockback)
-        {
-            Movement();
-            Attack();
-        }
-        }
+                if(!isAttack && !isKnockback)
+                {
+                    Movement();
+                    Attack();
+                }
+            }
         }
     }
 
 
-void Movement()
-{
-    if(isPlayer1)
+    void Movement()
     {
-        move = Input.GetAxis("Horizontal1");
+        if(isPlayer1)
+        {
+            move = Input.GetAxis("Horizontal1");
+        }
+        else
+        {
+            move = Input.GetAxis("Horizontal2");
+        }
+
+        rig.velocity = new Vector2(move * speed, 0.0f);
+        anim.SetFloat("Walk", move);
     }
-    else
+
+    void Attack()
     {
-        move = Input.GetAxis("Horizontal2");
-    }
-
-    rig.velocity = new Vector2(move * speed, 0.0f);
-    anim.SetFloat("Walk", move);
-}
-
-void Attack()
-{
-    if(isPlayer1)
-     {
-        if(Input.GetKeyDown(KeyCode.Q))
+        if(isPlayer1)
         {
-            attack = "LightPunch";
-        }
-        else if(Input.GetKeyDown(KeyCode.W))
-        {
-            attack = "HeavyPunch";
-        }
-        else if(Input.GetKeyDown(KeyCode.E))
-        {
-            attack = "LightKick";
-        }
-        else if(Input.GetKeyDown(KeyCode.R))
-        {
-            attack = "HeavyKick";
+            if(Input.GetKeyDown(KeyCode.Q))
+            {
+                attack = "LightPunch";
+            }
+            else if(Input.GetKeyDown(KeyCode.W))
+            {
+                attack = "HeavyPunch";
+            }
+            else if(Input.GetKeyDown(KeyCode.E))
+            {
+                attack = "LightKick";
+            }
+            else if(Input.GetKeyDown(KeyCode.R))
+            {
+                attack = "HeavyKick";
+            }
+            else
+            {
+                attack = "None";
+                
+            }
         }
         else
         {
-            attack = "None";
-            
+            if(Input.GetKeyDown(KeyCode.Keypad4))
+            {
+                attack = "LightPunch";
+            }
+            else if (Input.GetKeyDown(KeyCode.Keypad5))
+            {
+                attack = "HeavyPunch";
+            }
+            else if(Input.GetKeyDown(KeyCode.Keypad1))
+            {
+                attack = "LightKick";
+            }
+            else if(Input.GetKeyDown(KeyCode.Keypad2))
+            {
+                attack = "HeavyKick";
+            }
+            else
+            {
+                attack ="None";
+            }
         }
-     }
-        else
-     {
-        if(Input.GetKeyDown(KeyCode.Keypad4))
-        {
-            attack = "LightPunch";
-        }
-        else if (Input.GetKeyDown(KeyCode.Keypad5))
-        {
-            attack = "HeavyPunch";
-        }
-        else if(Input.GetKeyDown(KeyCode.Keypad1))
-        {
-            attack = "LightKick";
-        }
-        else if(Input.GetKeyDown(KeyCode.Keypad2))
-        {
-            attack = "HeavyKick";
-        }
-        else
-        {
-            attack ="None";
-        }
-     }
 
         if(attack != "None")
         {
@@ -173,6 +173,7 @@ void Attack()
                 rig.velocity = new Vector2(speed * (-1), 0.0f);
             }
             
+            }
         }
     }
 }
