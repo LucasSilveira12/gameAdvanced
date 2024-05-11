@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: fce6ffeb3088a794ba30249b385c1880
+guid: 0638618c427f973418e0555c459b713b
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 16
+  spritePixelsToUnits: 64
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -97,169 +97,85 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: buneco arma na mao_0
+      name: MuzzleFlash(buneco game)_0
       rect:
         serializedVersion: 2
-        x: 4
-        y: 4
-        width: 16
-        height: 17
-      alignment: 9
-      pivot: {x: 0.5, y: 0.1}
+        x: 9
+        y: 11
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0d610573086676d4e8f788560634a25f
-      internalID: -343796314
+      spriteID: 82fbaf0e63337674ea20d8cdc9c739e0
+      internalID: -419735948
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: buneco arma na mao_1
+      name: MuzzleFlash(buneco game)_1
       rect:
         serializedVersion: 2
-        x: 38
-        y: 4
-        width: 13
-        height: 17
-      alignment: 9
-      pivot: {x: 0.5, y: 0.1}
+        x: 36
+        y: 5
+        width: 28
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f30c9417eb3e3d24f996e045e1db5d91
-      internalID: -1581922272
+      spriteID: 6f4f9f30ff513dd418b05fd2aa1a84f5
+      internalID: 2096166326
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: buneco arma na mao_2
+      name: MuzzleFlash(buneco game)_3
       rect:
         serializedVersion: 2
-        x: 75
-        y: 4
-        width: 8
-        height: 17
-      alignment: 9
-      pivot: {x: 0.5, y: 0.1}
+        x: 69
+        y: 6
+        width: 25
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 23d858ff2c193f44db888986b3cc5d26
-      internalID: -637626710
+      spriteID: 6b33a8cb89dce6044964ba3b0b4e7425
+      internalID: -722012670
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: buneco arma na mao_3
+      name: MuzzleFlash(buneco game)_8
       rect:
         serializedVersion: 2
-        x: 108
-        y: 4
-        width: 13
-        height: 17
-      alignment: 9
-      pivot: {x: 0.5, y: 0.1}
+        x: 100
+        y: 5
+        width: 25
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4f2d094d9170bff4c9d0e97220f8a7c4
-      internalID: 246129411
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: buneco arma na mao_4
-      rect:
-        serializedVersion: 2
-        x: 141
-        y: 4
-        width: 13
-        height: 17
-      alignment: 9
-      pivot: {x: 0.5, y: 0.1}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0729ef8e9788c474f87dff88825b2a93
-      internalID: -982849574
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: buneco arma na mao_5
-      rect:
-        serializedVersion: 2
-        x: 174
-        y: 4
-        width: 8
-        height: 20
-      alignment: 9
-      pivot: {x: 0.5, y: 0.1}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 550bb393b362eb343a8b4fd056007685
-      internalID: 499747752
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: buneco arma na mao_6
-      rect:
-        serializedVersion: 2
-        x: 201
-        y: 4
-        width: 13
-        height: 17
-      alignment: 9
-      pivot: {x: 0.5, y: 0.1}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 00c1bb1d11f0f774f86dc13aafd46d4f
-      internalID: -1637769904
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: buneco arma na mao_7
-      rect:
-        serializedVersion: 2
-        x: 236
-        y: 4
-        width: 16
-        height: 17
-      alignment: 9
-      pivot: {x: 0.5, y: 0.1}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 21f13c3d7b4250e47a1f58635cc56a8f
-      internalID: 2138415299
+      spriteID: a809fd63d79837f4dbbb5610fa0241c4
+      internalID: 1370965081
       vertices: []
       indices: 
       edges: []
@@ -275,14 +191,16 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      buneco arma na mao_0: -343796314
-      buneco arma na mao_1: -1581922272
-      buneco arma na mao_2: -637626710
-      buneco arma na mao_3: 246129411
-      buneco arma na mao_4: -982849574
-      buneco arma na mao_5: 499747752
-      buneco arma na mao_6: -1637769904
-      buneco arma na mao_7: 2138415299
+      MuzzleFlash(buneco game)_0: -419735948
+      MuzzleFlash(buneco game)_1: 2096166326
+      MuzzleFlash(buneco game)_2: 386405334
+      MuzzleFlash(buneco game)_3: -722012670
+      MuzzleFlash(buneco game)_4: 1809579517
+      MuzzleFlash(buneco game)_5: -1648451466
+      MuzzleFlash(buneco game)_6: 1406203801
+      MuzzleFlash(buneco game)_7: 767785681
+      MuzzleFlash(buneco game)_8: 1370965081
+      MuzzleFlash(buneco game)_9: 1560029307
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
