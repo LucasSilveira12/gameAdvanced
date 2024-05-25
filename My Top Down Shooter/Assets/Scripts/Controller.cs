@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Controller : MonoBehaviour
 {
+    float reloadTime;
     Bullet bulletParameters;
     Vector2 playerPosition;
     Vector2 aimDirection;
@@ -17,6 +18,7 @@ public class Controller : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        reloadTime = 3.0f;
         bulletParameters = GetComponentInChildren<Bullet>();
         anim = GetComponentInChildren<Animator>();
         bodyRig = GetComponent<Rigidbody2D>();
@@ -27,6 +29,7 @@ public class Controller : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        reloadTime += Time.deltaTime;
         playerPosition = transform.position;
         if(isAiming)
         {
@@ -74,8 +77,9 @@ public class Controller : MonoBehaviour
         anim.SetFloat("AimVertical", aimDirection.y);
         anim.SetFloat("Magnitude", movement.magnitude);
         crossHair.transform.position = aim;
-        if(Input.GetMouseButtonDown(0))
+        if(Input.GetMouseButtonDown(0)&& reloadTime >= 3)
         {
+            reloadTime = 0.0f;
             bulletParameters.fireBullet(aim);
         }
     }
