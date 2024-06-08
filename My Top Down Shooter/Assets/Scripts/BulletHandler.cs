@@ -16,6 +16,10 @@ public class BulletHandler : MonoBehaviour
     {
         if(collision.tag != "Player")
         {
+            if(collision.tag == "Enemy")
+            {
+                Destroy(collision.gameObject);
+            }
             bulletRig.velocity = Vector2.zero;
             bulletAnim.SetTrigger("Impact");
             Destroy(gameObject, 0.12f);
