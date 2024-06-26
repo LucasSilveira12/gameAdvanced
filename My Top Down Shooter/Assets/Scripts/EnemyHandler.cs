@@ -27,8 +27,8 @@ public class EnemyHandler : MonoBehaviour
     {
         if(collision.tag == "Player")
         {
-            //acho q aqui vai da para fazer o game over dai do game over leva pro menu
-            SceneManager.LoadScene("Menu"); 
+            SceneManager.LoadScene("Menu");
+            
         }
     }
 }
