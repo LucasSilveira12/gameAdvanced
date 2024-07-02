@@ -15,7 +15,7 @@ public class GameManager : MonoBehaviour
     }
 
     public void Restart()
-     {
+    {
         SceneManager.LoadScene("Menu");
     }
     // Start is called before the first frame update

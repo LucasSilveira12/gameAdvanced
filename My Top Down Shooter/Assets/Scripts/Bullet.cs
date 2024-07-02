@@ -5,10 +5,10 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     public float bulletSpeed;
-    float bulletAngle;
-    float muzzeAngle;
-    Vector2 muzzlePosition;
-    Animator bulletAnim;
+    private float bulletAngle;
+    private float muzzeAngle;
+    private Vector2 muzzlePosition;
+    private Animator bulletAnim;
     public GameObject bulletPrefab;
     // Start is called before the first frame update
     void Start()
