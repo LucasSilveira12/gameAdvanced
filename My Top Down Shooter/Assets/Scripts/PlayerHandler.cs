@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class PlayerHandler : MonoBehaviour
 {
+    public GameManager GameManager;
+    bool playerLive;
+
     Vector2 inputVector = Vector2.zero;
     Vector2 mouseVector = Vector2.zero;
     Controller playerController;
@@ -11,6 +14,7 @@ public class PlayerHandler : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        playerLive = true;
         playerController = GetComponent<Controller>();
         aiming = false;
     }
@@ -31,5 +35,13 @@ public class PlayerHandler : MonoBehaviour
             aiming = false;
         }
             playerController.SetVectors(inputVector, mouseVector, aiming);
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.tag == "Enemy")
+        {
+            playerLive = false;
+            GameManager.EndScreen(playerLive);
+        }
     }
 }

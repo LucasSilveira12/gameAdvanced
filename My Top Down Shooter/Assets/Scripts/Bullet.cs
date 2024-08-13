@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
+    Vector2 bulletDir;
+
     public float bulletSpeed;
     private float bulletAngle;
     private float muzzeAngle;
@@ -16,10 +18,10 @@ public class Bullet : MonoBehaviour
         bulletAnim = GetComponent<Animator>();
     }
 
-    public void fireBullet(Vector2 aim)
+    public void fireBullet(Vector2 aimDir, Vector2 aim)
     {
         transform.rotation = Quaternion.identity;
-        bulletAngle = Mathf.Atan2(aim.y, aim.x) * Mathf.Rad2Deg;
+        bulletAngle = Mathf.Atan2(aimDir.y, aimDir.x) * Mathf.Rad2Deg;
         if (bulletAngle < 0)
         {
             bulletAngle += 360;
@@ -63,10 +65,12 @@ public class Bullet : MonoBehaviour
         }
         transform.Rotate(0f, 0f, muzzeAngle);
         transform.localPosition = muzzlePosition;
+        bulletDir = new Vector2(aim.x - transform.position.x, aim.y - transform.position.y);
+        bulletDir.Normalize();
         bulletAnim.SetTrigger("Fire");
         GameObject bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
         bullet.transform.Rotate(0f, 0f, bulletAngle);
-        bullet.GetComponent<Rigidbody2D>().velocity = aim * bulletSpeed;
+        bullet.GetComponent<Rigidbody2D>().velocity = bulletDir * bulletSpeed;
     }
 
     // Update is called once per frame

@@ -80,7 +80,7 @@ public class Controller : MonoBehaviour
         if(Input.GetMouseButtonDown(0)&& reloadTime >= 3)
         {
             reloadTime = 0.0f;
-            bulletParameters.fireBullet(aim);
+            bulletParameters.fireBullet(aimDirection, aim);
         }
     }
 }
