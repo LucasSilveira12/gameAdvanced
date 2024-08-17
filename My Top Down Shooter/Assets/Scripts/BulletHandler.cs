@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BulletHandler : MonoBehaviour
 {
+    public bool isBulletEnemy;
     Animator bulletAnim;
     Rigidbody2D bulletRig;
     // Start is called before the first frame update
@@ -14,12 +15,24 @@ public class BulletHandler : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.tag != "Player")
+        if(isBulletEnemy)
         {
-            bulletRig.velocity = Vector2.zero;
-            bulletAnim.SetTrigger("Impact");
-            Destroy(gameObject, 0.12f);
+            if(collision.tag != "Enemy")
+            {
+                bulletRig.velocity = Vector2.zero;
+                Destroy(gameObject, 0.12f);
+            }
         }
+        else
+        {
+            if(collision.tag != "Player")
+            {
+                bulletRig.velocity = Vector2.zero;
+                bulletAnim.SetTrigger("Impact");
+                Destroy(gameObject, 0.12f);
+            }
+        }
+        
     }
 
     // Update is called once per frame

@@ -17,9 +17,9 @@ public class Enemies : MonoBehaviour
     void Start()
     {
         enemiesDied = false;
-    for(int j=0; j<2; j++)
+    for(int j=0; j<3; j++)
       { 
-        for(int i = 0; i < 4; i++)
+        for(int i = 0; i < 2; i++)
         {
             GameObject spawnPoint = GetRandomSpawnPoint();
             EnemyHandler enemy = Instantiate(this.prefabs[j], this.transform);
@@ -32,7 +32,7 @@ public class Enemies : MonoBehaviour
     public void EnemyKilled()
     {
         enemiesKilled++;
-        if(enemiesKilled == 4)
+        if(enemiesKilled == 6)
         {
             enemiesDied = true;
         }

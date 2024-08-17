@@ -4,6 +4,12 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class EnemyHandler : MonoBehaviour
 {
+    Bullet bulletParameters;
+    private Vector2 randomNum;
+    float walkTime;
+    public bool hasRandomWalk;
+    private Vector2 randomPos;
+
     public bool hasWalkAnim;
     Animator anim;
 
@@ -16,19 +22,35 @@ public class EnemyHandler : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        bulletParameters = GetComponentInChildren<Bullet>();
+        randomNum = new Vector2((int)Mathf.Round(Random.Range(-1.0f,1.0f)), (int)Mathf.Round(Random.Range(-1.0f, 1.0f)));
+        walkTime = 2.0f;
         anim = GetComponentInChildren<Animator>();
         playerPos = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         enemyRig = this.GetComponent<Rigidbody2D>();
+        randomPos = new Vector2(this.transform.position.x + randomNum.x, this.transform.position.y + randomNum.y);
     }
 
     // Update is called once per frame
     void Update()
     {
+        walkTime += Time.deltaTime;
+        if(walkTime >= 2)
+        {
+            
+        }
         targetDir = playerPos.position - this.transform.position;
         targetDir.y += 0.5f;
         targetDir.Normalize();
         if(hasWalkAnim)
         {
+            if(hasRandomWalk && (walkTime >= 2))
+            {
+                Fire();
+                walkTime = 0.0f;
+                randomNum = new Vector2((int)Mathf.Round(Random.Range(-1.0f, 1.0f)), (int)Mathf.Round(Random.Range(-1.0f, 1.0f)));
+                randomPos = new Vector2(this.transform.position.x + randomNum.x, this.transform.position.y + randomNum.y);
+            }
             Walk();
         }
         else
@@ -47,6 +69,7 @@ public class EnemyHandler : MonoBehaviour
 
     void Walk()
     {
+        targetDir = new Vector2(randomPos.x - this.transform.position.x, randomPos.y - this.transform.position.y);
         anim.SetFloat("Horizontal", targetDir.x);
         anim.SetFloat("Vertical", targetDir.y);
         anim.SetFloat("magnitude", targetDir.magnitude);
@@ -58,5 +81,10 @@ public class EnemyHandler : MonoBehaviour
             SceneManager.LoadScene("Menu");
             
         }
+    }
+    
+    void Fire()
+    {
+        bulletParameters.fireBullet(targetDir, playerPos.position);
     }
 }

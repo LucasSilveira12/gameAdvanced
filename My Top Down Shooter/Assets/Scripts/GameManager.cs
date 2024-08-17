@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    public bool isFinalLevel;
+    public int level;
     public GameObject canvas;
     public GameObject win;
     public GameObject lose;
@@ -16,6 +18,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Time.timeScale = 1;
         winner = false;
         endScreen = false;
         canvas.SetActive(false);
@@ -28,16 +31,24 @@ public class GameManager : MonoBehaviour
     {
         if(endScreen)
         {
-            time += Time.deltaTime;
-            if(time > 5.0f)
+            time += Time.0.016f;
+            if(time > 3.0f)
             {
-                SceneManager.LoadScene("Menu");
+                if(isFinalLevel)
+                {
+                    SceneManager.LoadScene("Menu");
+                }
+                else
+                {
+                    SceneManager.LoadScene("Level" + level);
+                }
             }
         }
     }
 
     public void EndScreen(bool youWin)
     {
+        Time.timeScale = 0;
         winner = youWin;
         time = 0;
         endScreen = true;
@@ -46,6 +57,7 @@ public class GameManager : MonoBehaviour
         {
             win.SetActive(true);
             lose.SetActive(false);
+            level++;
         }
         else
         {
