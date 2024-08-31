@@ -31,7 +31,8 @@ public class GameManager : MonoBehaviour
     {
         if(endScreen)
         {
-            time += Time.0.016f;
+            time = 0.016f;
+            //time += Time.deltaTime;
             if(time > 3.0f)
             {
                 if(isFinalLevel)
@@ -50,8 +51,8 @@ public class GameManager : MonoBehaviour
     {
         Time.timeScale = 0;
         winner = youWin;
-        time = 0;
-        endScreen = true;
+        //time = 0;
+        //endScreen = true;
         canvas.SetActive(true);
         if(winner)
         {

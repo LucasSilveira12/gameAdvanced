@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 3982530601262406622}
   m_Layer: 0
   m_Name: EnemyBullet
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -143,7 +143,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.1875
+  m_Radius: 0.14
 --- !u!50 &6538903507974245695
 Rigidbody2D:
   serializedVersion: 4
@@ -158,8 +158,8 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_AngularDrag: 0
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -183,4 +183,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd5f14e0824ab3241a3b80b0ce412d11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isBulletEnemy: 0
+  isBulletEnemy: 1

@@ -35,10 +35,6 @@ public class EnemyHandler : MonoBehaviour
     void Update()
     {
         walkTime += Time.deltaTime;
-        if(walkTime >= 2)
-        {
-            
-        }
         targetDir = playerPos.position - this.transform.position;
         targetDir.y += 0.5f;
         targetDir.Normalize();
@@ -69,10 +65,17 @@ public class EnemyHandler : MonoBehaviour
 
     void Walk()
     {
-        targetDir = new Vector2(randomPos.x - this.transform.position.x, randomPos.y - this.transform.position.y);
+        if(hasRandomWalk)
+        {   
+            targetDir = new Vector2(randomPos.x - this.transform.position.x, randomPos.y - this.transform.position.y); 
+            targetDir.Normalize();
+            enemyRig.velocity = Vector2.zero;
+            enemyRig.velocity = new Vector2(targetDir.x, targetDir.y) * enemySpeed;
+        }
+        
         anim.SetFloat("Horizontal", targetDir.x);
         anim.SetFloat("Vertical", targetDir.y);
-        anim.SetFloat("magnitude", targetDir.magnitude);
+        anim.SetFloat("Magnitude", targetDir.magnitude);
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
