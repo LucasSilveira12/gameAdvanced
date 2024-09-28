@@ -24,7 +24,7 @@ public class EnemyHandler : MonoBehaviour
     {
         bulletParameters = GetComponentInChildren<Bullet>();
         randomNum = new Vector2((int)Mathf.Round(Random.Range(-1.0f,1.0f)), (int)Mathf.Round(Random.Range(-1.0f, 1.0f)));
-        walkTime = 2.0f;
+        walkTime = 0.0f;
         anim = GetComponentInChildren<Animator>();
         playerPos = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         enemyRig = this.GetComponent<Rigidbody2D>();
@@ -83,6 +83,11 @@ public class EnemyHandler : MonoBehaviour
         {
             SceneManager.LoadScene("Menu");
             
+        }
+        if(collision.tag == "Bullet")
+        {
+            this.killed.Invoke();
+            this.gameObject.SetActive(false);
         }
     }
     

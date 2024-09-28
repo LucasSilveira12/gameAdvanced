@@ -35,8 +35,8 @@ public class Enemies : MonoBehaviour
         if(enemiesKilled == 6)
         {
             enemiesDied = true;
+            teleport.IsActive(enemiesDied);
         }
-        teleport.IsActive(enemiesDied);
     }
 
     GameObject GetRandomSpawnPoint()

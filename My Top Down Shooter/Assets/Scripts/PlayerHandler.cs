@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerHandler : MonoBehaviour
 {
-    public GameManager GameManager;
+    public GameManager gamemanager;
     bool playerLive;
 
     Vector2 inputVector = Vector2.zero;
@@ -41,7 +41,12 @@ public class PlayerHandler : MonoBehaviour
         if(collision.tag == "Enemy")
         {
             playerLive = false;
-            GameManager.EndScreen(playerLive);
+            gamemanager.EndScreen(playerLive);
+        }
+        if(collision.tag == "bulletE")
+        {
+            playerLive = false;
+            gamemanager.EndScreen(playerLive);
         }
     }
 }

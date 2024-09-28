@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1140126061036096402}
   - component: {fileID: 8708672764899765382}
   - component: {fileID: 2586692843886406874}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: PistoSkull
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95,9 +95,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.06900209, y: -0.3926543}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.1402036
 --- !u!114 &2586692843886406874
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -125,7 +125,7 @@ GameObject:
   - component: {fileID: 1924959662147708540}
   - component: {fileID: 892082668282104572}
   - component: {fileID: 8431582356027494752}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: PistoSkullAnim
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -252,7 +252,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.064073324, y: 0.041072607}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -263,7 +263,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.9375, y: 1.375}
+  m_Size: {x: 0.59906197, y: 1.2139955}
   m_EdgeRadius: 0
 --- !u!1 &9159288935443602167
 GameObject:
@@ -277,9 +277,9 @@ GameObject:
   - component: {fileID: 341322927983272615}
   - component: {fileID: 4064859391464484923}
   - component: {fileID: 1909895323639017664}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: MuzzleFlash
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
