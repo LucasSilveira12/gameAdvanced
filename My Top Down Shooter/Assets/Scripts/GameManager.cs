@@ -31,8 +31,12 @@ public class GameManager : MonoBehaviour
     {
         if(endScreen)
         {
+<<<<<<< Updated upstream
             time = 0.016f;
             //time += Time.deltaTime;
+=======
+            time += 0.016f;
+>>>>>>> Stashed changes
             if(time > 3.0f)
             {
                 if(isFinalLevel)
